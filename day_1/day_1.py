@@ -1,7 +1,3 @@
-"""
-This list represents the Calories of the food carried by five Elves:
-Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
-"""
 import os
 INPUT = os.path.realpath('input.txt')
 BLANK = '\n'
