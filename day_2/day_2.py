@@ -1,33 +1,23 @@
+"""
+Correct Answers:
+The answer for Part One is: 8890
+The answer for Part Two is: 10238
+"""
 INPUT = 'input.txt'
 
-PLAYS = {
-    'A': {
-        'weapon_name': 'rock',
-        'beats': 'Z',
-    },
-    'B': {
-        'weapon_name': 'paper',
-        'beats': 'X',
-    },
-    'C': {
-        'weapon_name': 'scissors',
-        'beats': 'Y',
-    },
-    'X': {
-        'weapon_name': 'rock',
-        'beats': 'C',
-        'true_meaning': 'loss'
-    },
-    'Y': {
-        'weapon_name': 'paper',
-        'beats': 'A',
-        'true_meaning': 'draw'
-    },
-    'Z': {
-        'weapon_name': 'scissors',
-        'beats': 'B',
-        'true_meaning': 'win'
-    },
+WEAPONS = {
+    'A': 'rock',
+    'B': 'paper',
+    'C': 'scissors',
+    'X': 'rock',
+    'Y': 'paper',
+    'Z': 'scissors',
+}
+
+STRATEGIES = {
+    'X' : 'loss',
+    'Y': 'draw',
+    'Z': 'win'
 }
 
 POINTS = {
@@ -73,6 +63,7 @@ def rps_eval(opponent_weapon, my_weapon):
             points += POINTS['battle']['loss']
     return points
 
+
 def select_startegic_weapon(strategy, op_weapon):
     if strategy == 'draw':
         return op_weapon
@@ -92,15 +83,16 @@ def select_startegic_weapon(strategy, op_weapon):
         else:
             return 'paper'
 
+
 def eval_battle_pt_1(opponent_choice, my_choice):
-    op_weapon = PLAYS[opponent_choice]['weapon_name']
-    my_weapon = PLAYS[my_choice]['weapon_name']
+    op_weapon = WEAPONS[opponent_choice]
+    my_weapon = WEAPONS[my_choice]
     return rps_eval(op_weapon, my_weapon)
 
 
 def eval_battle_pt_2(opponent_choice, my_choice):
-    op_weapon = PLAYS[opponent_choice]['weapon_name']
-    my_strategy = PLAYS[my_choice]['true_meaning']
+    op_weapon = WEAPONS[opponent_choice]
+    my_strategy = STRATEGIES[my_choice]
     my_weapon = select_startegic_weapon(my_strategy, op_weapon)
     return rps_eval(op_weapon, my_weapon)
 

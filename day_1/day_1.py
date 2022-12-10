@@ -1,3 +1,8 @@
+"""
+Correct Answers:
+Most calories by a single elf: 74394
+Total calories by top three elves: 212836
+"""
 INPUT = 'input.txt'
 BLANK = '\n'
 
