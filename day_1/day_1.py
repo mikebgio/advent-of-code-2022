@@ -1,5 +1,4 @@
-import os
-INPUT = os.path.realpath('input.txt')
+INPUT = 'input.txt'
 BLANK = '\n'
 
 def setup_hauls():
